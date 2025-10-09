@@ -15,4 +15,21 @@ public class BuscaObjeto {
             vetor[i] = temp;
         }
     }
+    public static Item buscaBinariaPorNome(Item[] vetor, String busca){
+        int inicio = 0;
+        int fim = vetor.length - 1;
+        while(inicio <= fim){
+            int meio = inicio + (fim - inicio) /2;
+            int comparacao = busca.compareToIgnoreCase(vetor[meio].nome);
+            if(comparacao == 0){
+                return vetor[meio];
+            }
+            if(comparacao < 0){
+                fim = meio - 1;
+            }else{
+                inicio = meio + 1;
+            }
+        }
+        return null;
+    }
 }
