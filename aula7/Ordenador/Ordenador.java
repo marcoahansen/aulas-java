@@ -34,5 +34,19 @@ public class Ordenador {
             System.out.printf("temp %d - vetor[indiceDoMenor] %d -  vetor[i] %d \n", temp, vetor[indiceDoMenor], vetor[i]);
         }
     }
+
+    public static void insertionSort(int[] vetor){
+        for(int i= 1; i< vetor.length; i++){
+            int chave = vetor[i];
+            System.out.println("Essa é a chave " + chave);
+            int j = i -1;
+            while (j >=0 && vetor[j]>chave){
+               System.out.printf("Substituiu o vetor[%d] - %d pelo vetor[%d] - %d\n",j+1, vetor[j+1], j, vetor[j]);
+               vetor[j+1] = vetor[j];
+               j = j - 1; 
+            }
+            vetor[j+1] = chave;
+        }
+    }
 }
 
