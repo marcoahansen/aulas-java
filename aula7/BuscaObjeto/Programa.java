@@ -15,12 +15,12 @@ public class Programa {
         };
         String busca;
         for (int i = 0; i < itens.length; i++) {
-            System.out.println("- Nome: "+ itens[i].nome + " - Valor: " + itens[i].valor);
+            System.out.println("- Nome: "+ itens[i].getNome() + " - Valor: " + itens[i].getValor());
         }
         BuscaObjeto.selectionSortPorNome(itens);
         System.out.print("\n\n\n");
         for (int i = 0; i < itens.length; i++) {
-            System.out.println("- Nome: "+ itens[i].nome + " - Valor: " + itens[i].valor);
+            System.out.println("- Nome: "+ itens[i].getNome() + " - Valor: " + itens[i].getValor());
         }
         System.out.println("Digite um nome de produto para buscar: ");
         busca = sc.nextLine();
@@ -30,8 +30,8 @@ public class Programa {
         if(encontrado == null){
            System.out.println("Item não encontrado...");
         }else {
-            System.out.println("O item buscado é: " + encontrado.nome + " - " + encontrado.valor);
+            System.out.println("O item buscado é: " + encontrado.getNome() + " - " + encontrado.getValor());
         }
-
+        sc.close();
     }
 }

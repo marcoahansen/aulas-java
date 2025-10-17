@@ -6,7 +6,7 @@ public class BuscaObjeto {
         for(int i = 0; i<n -1; i++){
             int indiceDoMenor = i;
             for(int j = i+1; j<n;j++){
-                if(vetor[j].nome.compareToIgnoreCase(vetor[indiceDoMenor].nome) < 0){
+                if(vetor[j].getNome().compareToIgnoreCase(vetor[indiceDoMenor].getNome()) < 0){
                     indiceDoMenor = j;
                 }
             }
@@ -20,7 +20,7 @@ public class BuscaObjeto {
         int fim = vetor.length - 1;
         while(inicio <= fim){
             int meio = inicio + (fim - inicio) /2;
-            int comparacao = busca.compareToIgnoreCase(vetor[meio].nome);
+            int comparacao = busca.compareToIgnoreCase(vetor[meio].getNome());
             if(comparacao == 0){
                 return vetor[meio];
             }
