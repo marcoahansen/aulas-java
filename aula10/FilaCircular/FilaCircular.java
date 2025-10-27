@@ -22,10 +22,10 @@ public class FilaCircular {
             return;
         }
         fim = (fim +1)%capacidade;
-        System.out.println((fim +1)%capacidade + "Fim");
+        // System.out.println((fim +1)%capacidade + "Fim");
         elementos[fim] = elemento;
         tamanho++;
-        System.out.println("A pessoa:  "+ elemento.getNome() + " foi adicionada no final da fila!");
+        // System.out.println("A pessoa:  "+ elemento.getNome() + " foi adicionada no final da fila!");
     }
 
     public Pessoa dequeue(){
@@ -36,15 +36,15 @@ public class FilaCircular {
         Pessoa p = elementos[inicio];
         elementos[inicio] = null;
         inicio = (inicio + 1)%capacidade;
-        System.out.println((inicio + 1)%capacidade + "Inicio");
+        // System.out.println((inicio + 1)%capacidade + "Inicio");
         tamanho--;
-        System.out.println("A pessoa " + p.getNome() + " foi removida do inicio da fila!");
+        // System.out.println("A pessoa " + p.getNome() + " foi removida do inicio da fila!");
         return p;
     }
 
     public Pessoa front(){
         if(isEmpty()){
-            System.out.println("A fila está vazia!");
+            // System.out.println("A fila está vazia!");
             return null;
         }
         return elementos[inicio];
@@ -55,5 +55,11 @@ public class FilaCircular {
     }
     public int tamanho(){
         return tamanho;
+    }
+
+    public void MostrarFila(){
+        for(int i = 0; i < tamanho; i++){
+            System.out.printf("%dº -%s;\n", i+1, elementos[i].getNome());
+        }
     }
 }

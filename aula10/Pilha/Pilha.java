@@ -18,7 +18,7 @@ public class Pilha {
         }
         topo++;
         elementos[topo] = elemento;
-        System.out.println("A pessoa:  "+ elemento.getNome() + " foi adicionada no topo da pilha!");
+        // System.out.println("A pessoa:  "+ elemento.getNome() + " foi adicionada no topo da pilha!");
     }
     public Pessoa peek(){
         if(isEmpty()){
@@ -35,7 +35,7 @@ public class Pilha {
         Pessoa p = elementos[topo];
         elementos[topo] = null;
         topo--;
-        System.out.println("A pessoa " + p.getNome() + " foi removida do topo da pilha!");
+        // System.out.println("A pessoa " + p.getNome() + " foi removida do topo da pilha!");
         return p;
     }
     public boolean isEmpty(){
@@ -43,5 +43,11 @@ public class Pilha {
     }
     public int tamanho(){
         return topo + 1;
+    }
+
+    public void MostrarPilha(){
+        for(int i = topo; i >=0; i--){
+            System.out.printf("%dº -%s;\n", i+1, elementos[i].getNome());
+        }
     }
 }
